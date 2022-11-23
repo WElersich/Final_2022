@@ -26,8 +26,29 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
+$H_0$ The vaccine covid921 is ineffective at preventing the contraction of Covid-19 in males.
+
+$H_1$ The vaccine covid921 is effective at preventing the contraction of Covid-19 in males.
+
+### Wrangling Data
+```{r}
+Males<-filter(FinalData,sex== "M") %>%
+  select("treatment","infected")
+```
+
+Here I filtered the dataset so that only males, our subpopulation of interest, remain. I also selected only the columns needed to determine the effecicacy of the vaccine, resulting in a tidier dataset than I otherwise would have.
+
+### Graphical Results
+
+
+### Numerical Results
+
+
+### Inferential Results
+
 
 ## Females
+
 
 
 ## LGBTQ
