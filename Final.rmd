@@ -39,16 +39,20 @@ Males<-filter(FinalData,sex== "M") %>%
 Here I filtered the dataset so that only males, our subpopulation of interest, remain. I also selected only the columns needed to determine the effecicacy of the vaccine, resulting in a tidier dataset than I otherwise would have.
 
 ### Graphical Results
-Since we are trying to explain a categorical variable, "infected", by another categorical variable, "treatment", we should use a boxplot to visualize the relationship between the two variables
+Since we are trying to explain a categorical variable, "infected", by another categorical variable, "treatment", we should use a boxplot to visualize the relationship between the two variables. we are also more interested in percentages than quantities.
 
 ```{r}
 barchartGC(~infected + treatment,data=Males, type="percent")
 ```
 Here we can see that the percentage of those who were vaccinated contracted covid-19 is significantly smaller than those who had taken placebo. Of those who did not contract covid-19, roughly half were vaccinated, while half were not.
 
-
 ### Numerical Results
-
+We shall create a table showing the data, in a similar manner to the above plot.
+```{r}
+tableM <- xtabs(~infected + treatment,data=Males)
+rowPerc(tableM)
+```
+Here we can see the same results as the bar plot, but more precisely. Of those who were infected with covid-19, 68.44% had taken placebo, while 31.56 had taken the vaccine. Of those who remained uninfected, close to half (49.88%) had taken placebo, while the other "half" (50.12%) had taken the vaccine.
 
 ### Inferential Results
 
