@@ -67,6 +67,17 @@ We have rejected the null hypothesis, and thus concluded that the treatment does
 
 ## Females
 
+$H_0$ The vaccine covid921 is has no effect on the contraction of Covid-19 in females.
+
+$H_1$ The vaccine covid921 is has an effect on the contraction of Covid-19 in females.
+
+### Wrangling Data
+```{r}
+Females<-filter(FinalData,sex== "F") %>%
+  select("treatment","infected")
+```
+
+Here I once again filtered the dataset so that only females, our subpopulation of interest, remain..
 
 
 ## LGBTQ
