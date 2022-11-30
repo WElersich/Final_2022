@@ -52,9 +52,17 @@ We shall create a table showing the data, in a similar manner to the above plot.
 tableM <- xtabs(~infected + treatment,data=Males)
 rowPerc(tableM)
 ```
-Here we can see the same results as the bar plot, but more precisely. Of those who were infected with covid-19, 68.44% had taken placebo, while 31.56 had taken the vaccine. Of those who remained uninfected, close to half (49.88%) had taken placebo, while the other "half" (50.12%) had taken the vaccine.
+Here we can see the same results as the bar plot, but more precisely. Of those who were infected with covid-19, 68.44% had taken placebo, while 31.56% had taken the vaccine. Of those who remained uninfected, close to half (49.88%) had taken placebo, while the other "half" (50.12%) had taken the vaccine.
 
 ### Inferential Results
+Since we are explaining a categorical variable with another categorical variables, and we only are using two variables, we shall use the fisher test.
+```{r}
+fisher.test(tableM)
+```
+We have a p-value of 2.364e-12 (0.000000000002364), corresponding to a 0.0000000002364% likelihood that our results are due to random chance. This is highly improbable, thus we reject $H_0$ in favor of $H_A$
+
+### Conclusion
+
 
 
 ## Females
