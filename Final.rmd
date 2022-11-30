@@ -87,7 +87,7 @@ Since our question is essentially the same here as it was for males, we use anot
 barchartGC(~infected + treatment,data=Females, type="percent")
 ```   
 
-Here we can see that the percentage of those who were vaccinated and contracted covid-19 is substantially higher than those who had taken placebo. Of those who did not contract covid-19, roughly half were vaccinated, while half were not, just likle the men.
+Here we can see that the percentage of those who were vaccinated and contracted covid-19 is substantially higher than those who had taken placebo. Of those who did not contract covid-19, roughly half were vaccinated, while half were not, just like the men.
 
 ### Numerical Results
 We shall create a table showing the data, in a similar manner to the above plot.
@@ -109,6 +109,44 @@ We have rejected the null hypothesis, and thus concluded that the treatment does
 
 ## LGBTQ
 
+$H_0$ The vaccine covid921 has no effect on the contraction of Covid-19 in LGBTQ.
+
+$H_1$ The vaccine covid921 has an effect on the contraction of Covid-19 in LGBTQ.
+
+### Wrangling Data
+```{r}
+AlphabetSoup<-filter(FinalData,LGBTQ== "gay") %>%
+  select("treatment","infected")
+```
+
+The data has been filtered so that only LGBTQ, our subpopulation of interest, remain.
+
+### Graphical Results
+we create a boxplot again.
+
+```{r}
+barchartGC(~infected + treatment,data=AlphabetSoup, type="percent")
+```   
+
+Here we can see that the percentage of those who were vaccinated and contracted covid-19 is extremely high compared than those who had taken placebo. Of those who did not contract covid-19, roughly half were vaccinated, while half were not, unsurprisingly.
+
+### Numerical Results
+Creating a table:
+```{r}
+tableG <- xtabs(~infected + treatment,data=AlphabetSoup)
+rowPerc(tableG)
+```
+Of those who were infected with covid-19, 13.33% had taken placebo, while 86.67% had taken the vaccine.
+
+### Inferential Results
+Employing the fisher test:
+```{r}
+fisher.test(tableG)
+```
+We have a p-value of 1.244e-08 (0.0000001244), corresponding to a 0.00001244% likelihood that our results are due to random chance. This is highly improbable, so we reject $H_0$ in favor of $H_A$
+
+### Conclusion
+We have rejected the null hypothesis, and thus concluded that the treatment does affect the probability of contracting covid-19 in females. Of those infected, 13.33% had taken placebo, while 86.67% had taken the vaccine. This means that, for LGTBQ, those who take the vaccine are 6.5 times more likely to contract covid-19 than those who did not.
 
 
 ## Druggies
