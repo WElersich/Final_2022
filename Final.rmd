@@ -26,9 +26,9 @@ A new  preventative vaccine (covid921) is under test in clinical trials. Given t
 
 ## Males
 
-$H_0$ The vaccine covid921 is ineffective at preventing the contraction of Covid-19 in males.
+$H_0$ The vaccine covid921 is has no effect on the contraction of Covid-19 in males.
 
-$H_1$ The vaccine covid921 is effective at preventing the contraction of Covid-19 in males.
+$H_1$ The vaccine covid921 is has an effect on the contraction of Covid-19 in males.
 
 ### Wrangling Data
 ```{r}
@@ -62,7 +62,7 @@ fisher.test(tableM)
 We have a p-value of 2.364e-12 (0.000000000002364), corresponding to a 0.0000000002364% likelihood that our results are due to random chance. This is highly improbable, thus we reject $H_0$ in favor of $H_A$
 
 ### Conclusion
-
+We have rejected the null hypothesis, and thus concluded that the treatment does affect the probability of contracting covid-19 in males. The group of those who were uninfected is roughly half and half between vaccine and placebo, but this is because of a low probability of contracting the disease in general. Of those infected, 68.44% had taken placebo, while 31.56% had taken the vaccine. This means that, for males, those who take the vaccine are 2.17 times less likely to contract covid-19 than those who did not.
 
 
 ## Females
