@@ -97,6 +97,13 @@ rowPerc(tableF)
 ```
 Of those who were infected with covid-19, 42.82% had taken placebo, while 57.18% had taken the vaccine. Of those who remained uninfected, close to half (50.29%) had taken placebo, while the other "half" (49.71%) had taken the vaccine.
 
+### Inferential Results
+Since we are explaining a categorical variable with another categorical variables, and we only are using two variables, we shall use the fisher test.
+```{r}
+fisher.test(tableF)
+```
+We have a p-value of 0.004887, corresponding to a 0.4887% likelihood that our results are due to random chance. This is improbable, although not as much as it was more males, but we still reject $H_0$ in favor of $H_A$
+
 ## LGBTQ
 
 
