@@ -187,6 +187,13 @@ fisher.test(tableD)
 We have a p-value of 3.119e-07 (0.000003119), so we reject $H_0$ in favor of $H_A$. We also have a 95% confidence interval of 0.09374973 to 0.41790451 for the odds ratio.
 
 ### Conclusion
-By rejecting the null hypothesis, we conclude that drug users who take the vaccine are 2.39 to 10.7times more likely to contract covid-19 than those who had taken placebo.
+By rejecting the null hypothesis, we conclude that drug users who take the vaccine are 2.39 to 10.7 times more likely to contract covid-19 than those who had taken placebo.
 
 # Overall Results and Conclusions
+For men, we rejected the null hypothesis, and concluded that men who had taken the vaccine were 1.73 to 2.75 times less likely to contract covid-19 than those who are not.
+
+For women, we also rejected the null hypothesis. However, we did not conclude that the vaccine is effective at reducing the rate of infection. Instead, we determined that women who take the vaccine are slightly more likely to contract covid-19 than those who are not, at 1.09 to 1.68 times more likely
+
+For LGBTQ, we once again rejected the null hypothesis, and concluded that those who were vaccinated were 2.9 to 15.1 times more likely to contract covid-19. Clearly, this subpopulation would be wise to avoid taking this treatment.
+
+For drug users, the null hypothesis is rejected, and we concluded that drug users who are treated with this vaccine are 2.39 to 10.7 times more likely to contract covid-19 than drug users who are not. It would be inadvisable for drug users to take this particular treatment. 
